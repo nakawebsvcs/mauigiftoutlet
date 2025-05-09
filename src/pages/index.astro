@@ -1,0 +1,655 @@
+---
+import { CartCheckout } from "@lloydjatkinson/astro-snipcart/astro";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CTA from "@components/CTA.astro";
+import ProductsGrid from "@components/Snipcart/ProductsGrid.astro";
+
+import { getCollection } from 'astro:content';
+import Promotional from "@components/Promotional.astro";
+const products = await getCollection("products");
+---
+
+<BaseLayout
+  title="Maui Gift Outlet"
+  description="CodeStitch Astro x Snipcart starter kit has been created to help you get started with your e-commerce project."
+>
+  
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-1785">
+    <div class="cs-container">
+        <div class="cs-content">
+   <!--         <span class="cs-topper">Best Gym Of The City For Fitness</span> -->
+            <h1 class="cs-title">Bring Aloha to You!</h1>
+            <p class="cs-text">
+                Step into the heart of Maui and discover a charming island gift shop filled with aloha. Whether you're searching for the perfect souvenir to remember your trip, a unique gift for someone special, or just something to treat yourself, we’ve got you covered.
+            </p>
+            <div class="cs-button-group">
+                <a href="" class="cs-button-solid cs-button1">Shop Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Image -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/src/assets/images/Store-photo.jpg">
+        <source media="(min-width: 601px)" srcset="/src/assets/images/Store-photo.jpg">
+        <img loading="lazy" decoding="async" src="/src/assets/images/Store-photo.jpg" alt="field" width="1920" height="1200" aria-hidden="true">
+    </picture>
+
+    <div class="custom-shape-divider-bottom-1746819066">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+    </svg>
+</div>
+</section>
+
+
+<!-- ============================================ -->
+  <!--                    Promo Section             -->
+  <!-- ============================================ -->
+  <Promotional />
+             
+    <!-- ============================================ -->
+  <!--                Products Grid                  -->
+  <!-- ============================================ -->
+
+  <ProductsGrid products={products} />
+  <!-- ============================================ -->
+  <!--                   Reviews                    -->
+  <!-- ============================================ -->
+
+  <section id="reviews">
+    <div class="cs-container">
+      <span class="cs-topper">Our Reviews</span>
+      <h2 class="cs-title">Words From Our Customers</h2>
+      <p class="cs-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor
+        volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida
+        viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo,
+        ornare. Lorem ipsum dolor sit amet.
+      </p>
+      <ul class="cs-card-group">
+        <!-- Review 1 -->
+        <li class="cs-item">
+          <img
+            class="cs-item-img"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png"
+            alt="profile picture"
+            width="80"
+            height="80"
+          />
+          <p class="cs-item-p">
+            Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor
+            habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed
+            ullamcorper lectus et. Auctor velit diam fermentum consequat.
+            Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
+          </p>
+          <span class="cs-reviewer">
+            Jon Doe
+            <span class="cs-desc">Homeowner</span>
+          </span>
+          <img
+            class="cs-item-stars"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+            alt="stars"
+            width="96"
+            height="16"
+          />
+        </li>
+        <!-- Review 2 -->
+        <li class="cs-item">
+          <img
+            class="cs-item-img"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png"
+            alt="profile picture"
+            width="80"
+            height="80"
+          />
+          <p class="cs-item-p">
+            Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor
+            habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed
+            ullamcorper lectus et. Auctor velit diam fermentum consequat.
+            Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
+          </p>
+          <span class="cs-reviewer">
+            Jane Doe
+            <span class="cs-desc">Homeowner</span>
+          </span>
+          <img
+            class="cs-item-stars"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+            alt="stars"
+            width="96"
+            height="16"
+          />
+        </li>
+      </ul>
+  <!--     <a aria-label="read more reviews" href="/reviews" class="cs-button-solid"
+        >Our Reviews</a
+      >
+    </div> -->
+  </section>
+
+</BaseLayout>
+
+<style lang="less">
+  /* STYLES FOR ABOVE THE FOLD */
+
+  /*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #hero-1785 {
+        /* 200px - 300px - leaving extra space for the navigation */
+        padding: clamp(12.5rem, 25.95vw, 18.75em) (16/16rem);
+        /* prevents the topper line from causing an overflow */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: (48/16rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            max-width: (750/16rem);
+        }
+
+        .cs-title {
+            /* 49px - 84px */
+            font-size: clamp(4rem, 8vw, 6.5rem);
+        }
+
+        .cs-title,
+        .cs-text {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-text {
+          font-size: clamp(1rem, 1.5vw, 2rem);
+            margin-bottom: (32/16rem);
+        }
+
+        .cs-button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: (8/16rem);
+        }
+
+       .custom-shape-divider-bottom-1746819066 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1746819066 svg {
+    position: relative;
+    display: block;
+    width: calc(108% + 1.3px);
+    height: 209px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1746819066 .shape-fill {
+    fill: #ffffff;
+}
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+
+            &:before {
+                /* Overlay */
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: #000;
+                /* prevents the cursor from interacting with it */
+                pointer-events: none;
+                opacity: 0.5;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+/* Large Desktop - 1920px */
+@media only screen and (min-width: 120rem) {
+    #hero-1785 {
+        /* this ties the padding bottom value to the size of the screen width. The wider the image gets the taller it gets, meaning it will get clsoer and closer to the content. This makes the padding bottom value grow with the screen size so it accounts for the growing height of the svg graphic getting taller */
+        padding-bottom: 14vw;
+    }
+}
+
+
+  /*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0em) {
+    #hero {
+      font-family: "Roboto", "Arial", sans-serif;
+      /* Centers button */
+      text-align: center;
+      /* changes on tablet */
+      padding: 0 (16/16rem);
+      padding-bottom: (100/16rem);
+      position: relative;
+      z-index: 1;
+      /* prevents overflow from the lines extending past the screen width */
+      overflow: hidden;
+
+      .cs-picture {
+        /* Background Image */
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+
+        &:before {
+          /* Black Color Overlay */
+          content: "";
+          width: 100%;
+          height: 100%;
+          background: #000;
+          opacity: 0.7;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          /* prevents the cursor from interacting with it */
+          pointer-events: none;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          /* Makes image act like a background-image */
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .cs-container {
+        width: 100%;
+        max-width: (1280/16em);
+        margin: auto;
+        /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
+        /* 144px - 280px - leaving extra space for the navigation */
+        /* changes on tablet */
+        padding: clamp(9em, 25.95vw, 17.5em) 0;
+        position: relative;
+
+        &:before {
+          /* Left Line */
+          content: "";
+          width: 1px;
+          height: 100%;
+          background: -moz-linear-gradient(
+            top,
+            rgba(250, 251, 252, 0.5) 0%,
+            rgba(250, 251, 252, 0) 100%
+          ); /* FF3.6-15 */
+          background: -webkit-linear-gradient(
+            top,
+            rgba(250, 251, 252, 0.5) 0%,
+            rgba(250, 251, 252, 0) 100%
+          ); /* Chrome10-25,Safari5.1-6 */
+          opacity: 1;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .cs-flex-group {
+        width: 80vw;
+        /* 464px - 562px */
+        max-width: clamp(29em, 60vw, 35.125em);
+        margin: auto;
+        /* 60px - 220px */
+        margin-bottom: clamp(3.75em, 15.5vw, 13.75em);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .cs-topper {
+        text-align: center;
+        color: var(--primary);
+      }
+
+      .cs-title {
+        text-align: center;
+        width: 100%;
+        color: var(--bodyTextColorWhite);
+      }
+
+      .cs-text {
+        text-align: center;
+        /* 32px - 40px */
+        margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
+        /* 40px - 48px */
+        margin-bottom: clamp(2.5rem, 4vw, 3rem);
+        color: var(--bodyTextColorWhite);
+      }
+
+      .cs-button-solid {
+        line-height: clamp(2.875em, 5.5vw, 3.5em);
+        height: initial;
+        margin-bottom: calc(16 / 16 * 1rem);
+      }
+
+      .cs-button-transparent {
+        font-size: (16/16rem);
+        font-weight: 700;
+        /* 46px - 56px */
+        line-height: clamp(2.875em, 5.5vw, 3.5em);
+        text-decoration: none;
+        width: (180/16rem);
+        /* 46px - 56px */
+        height: clamp(2.875em, 5.5vw, 3.5em);
+        margin: 0 (8/16rem);
+        box-sizing: border-box;
+        padding: 0;
+        color: #fff;
+        background-color: transparent;
+        border: 1px solid var(--bodyTextColorWhite);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+          content: "";
+          background: #000;
+          opacity: 1;
+          display: block;
+          position: absolute;
+          /* so it sits on top of the border */
+          top: -1px;
+          right: -1px;
+          bottom: -1px;
+          left: -1px;
+          z-index: -1;
+          /* this is what creates the grow affect on hover */
+          transform: scaleX(0);
+          transition: transform 0.3s;
+          transform-origin: left;
+        }
+
+        &:hover {
+          &:before {
+            transform: scaleX(1);
+          }
+        }
+
+        .cs-img {
+          margin-right: (12/16rem);
+          display: block;
+        }
+      }
+    }
+  }
+
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48em) {
+    #hero {
+      /* 32px - 40px */
+      padding: 0 clamp(2em, 5vw, 2.5em);
+
+      .cs-container {
+        padding: clamp(7em, 27.95vw, 17.5em) 0 clamp(9em, 30.95vw, 23.5em) 0;
+        &:after {
+          /* Right Line */
+          content: "";
+          width: 1px;
+          height: 100%;
+          background: -moz-linear-gradient(
+            top,
+            rgba(250, 251, 252, 0) 0%,
+            rgba(250, 251, 252, 0.5) 100%
+          ); /* FF3.6-15 */
+          background: -webkit-linear-gradient(
+            top,
+            rgba(250, 251, 252, 0) 0%,
+            rgba(250, 251, 252, 0.5) 100%
+          ); /* Chrome10-25,Safari5.1-6 */
+          opacity: 1;
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+
+      .cs-button-solid {
+        margin-right: (20/16rem);
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+  /* Dark Mode */
+  @media only screen and (min-width: 0em) {
+    body.dark-mode {
+      #hero {
+        .cs-background {
+          &:before {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+
+
+  /*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0em) {
+    #reviews {
+      /* Centers the button */
+      text-align: center;
+      padding: var(--sectionPadding);
+
+      .cs-container {
+        width: 100%;
+        max-width: (1104/16rem);
+        margin: auto;
+      }
+
+      .cs-topper {
+        text-align: center;
+      }
+
+      .cs-title {
+        text-align: center;
+        max-width: (700/16rem);
+      }
+
+      .cs-text {
+        text-align: center;
+        max-width: (650/16rem);
+        /* 88px - 104px */
+        margin-bottom: clamp(5.5em, 10.2vw, 6.5em);
+      }
+
+      .cs-card-group {
+        /* 48px - 64px */
+        margin: 0 auto clamp(3rem, 5vw, 4rem);
+        padding: 0;
+      }
+
+      .cs-item {
+        text-align: left;
+        list-style: none;
+        width: 100%;
+        max-width: (542/16rem);
+        margin: 0 auto (64/16rem);
+        /* Prevents padding from affecting height & width */
+        box-sizing: border-box;
+        /* Padding L & R - 16px - 32px */
+        padding: (60/16rem) clamp(1rem, 3.2vw, 2rem) 0;
+        /* 32px - 40px */
+        padding-bottom: clamp(2rem, 5.4vw, 2.5rem);
+        background: #fff;
+        box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
+        border-radius: (4/16rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      .cs-item-img {
+        width: (80/16rem);
+        height: (80/16rem);
+        position: absolute;
+        top: (-40/16rem);
+      }
+
+      .cs-item-p {
+        font-size: (16/16rem);
+        line-height: 1.5em;
+        margin: 0 0 (20/16rem);
+        padding-bottom: (20/16rem);
+        color: var(--bodyTextColor);
+        border-bottom: 1px solid #e8e9ec;
+      }
+
+      .cs-reviewer {
+        font-size: (16/16rem);
+        font-weight: 700;
+        line-height: 1.5em;
+        width: 40%;
+        margin: 0 auto 0 0;
+        color: var(--headerColor);
+        display: block;
+      }
+
+      .cs-desc {
+        font-size: (14/16rem);
+        font-weight: 400;
+        color: var(#353535);
+        display: block;
+      }
+
+      .cs-item-stars {
+        width: (96/16rem);
+        height: (16/16rem);
+      }
+    }
+  }
+
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48em) {
+    #reviews {
+      .cs-card-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: (16/16rem);
+      }
+
+      .cs-item {
+        /* reset margin so it won't interfere with flexbox */
+        margin: 0;
+      }
+    }
+  }
+
+  /* Dark Mode */
+  @media only screen and (min-width: 0em) {
+    body.dark-mode {
+      #reviews {
+        .cs-title,
+        .cs-text,
+        .cs-item-p,
+        .cs-reviewer {
+          color: var(--bodyTextColorWhite);
+        }
+
+        .cs-item {
+          background: var(--medium);
+        }
+
+        .cs-desc {
+          color: var(--primaryLight);
+        }
+      }
+    }
+  }
+</style>

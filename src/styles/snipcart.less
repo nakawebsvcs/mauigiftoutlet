@@ -1,0 +1,107 @@
+/*-- --------------------------------- -->
+<--- Snipcart global style overrides --->
+<--- --------------------------------- --*/
+
+#snipcart {
+  --bgColor-buttonSecondary: var(--primary);
+  --bgColor-buttonPrimary-hover: #000;
+  --color-link: var(--secondary);
+  --color-link-hover: var(--secondaryLight);
+  --color-icon: var(--secondary);
+  font-family: inherit;
+}
+
+/* Fix for modal positioning - keep this from our previous changes */
+.snipcart-modal {
+  color: var(--headerColor);
+  /* Position below navbar */
+  top: var(--navbar-height) !important;
+  height: calc(100vh - var(--navbar-height)) !important;
+  /* Remove margin-top that was pushing content down */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Make the content area scrollable - keep this from our previous changes */
+.snipcart-modal__container {
+  max-height: 100% !important;
+  overflow-y: auto !important;
+}
+
+/* Adjust header padding to be visible */
+.snipcart-cart-header,
+.snipcart-cart__secondary-header {
+  padding: 2rem 2rem clamp(1rem, 5vw, 2rem) !important;
+  position: sticky !important;
+  top: 0 !important;
+  background: var(--bgColor-default, white) !important;
+  z-index: 10 !important;
+}
+
+/* Adjust signin box padding */
+.snipcart-signin__box {
+  padding: 2rem 2rem !important;
+  margin-top: 4rem !important;
+}
+
+/* Font styles */
+.snipcart__font--secondary,
+.snipcart__font--subtitle,
+.snipcart__font--subtitle-small,
+.snipcart-modal__close {
+  font-family: inherit;
+}
+
+/* Style the "Continue shopping" button and arrow */
+.snipcart-cart-header__close-button,
+.snipcart-modal__close {
+  font-size: var(--bodyFontSize);
+  color: var(--bodyTextColor);
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.5rem 1rem !important;
+}
+
+/* Style the arrow icon */
+.snipcart-modal__close-icon {
+  margin-right: 0.5rem !important; /* Add space between arrow and text */
+  position: static !important; /* Ensure it's not absolutely positioned */
+  width: 20px !important; /* Control the size */
+  height: 20px !important;
+}
+
+/* Style the "Continue shopping" text */
+.snipcart-modal__close-title {
+  font-size: 1rem !important;
+}
+
+/* Button styles */
+.snipcart-button-primary {
+  font-family: inherit;
+  line-height: calc(50/16em);
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 100%;
+  height: calc(50/16rem);
+  padding: 0 calc(30/16rem);
+  border: none;
+  border-radius: 0;
+  color: #000;
+  background-color: var(--primary);
+}
+
+.snipcart-button-primary .snipcart-base-button__label {
+  font-size: calc(16/16rem);
+  font-family: inherit;
+  font-weight: bold;
+}
+
+/* Ensure footer is visible */
+.snipcart-cart__footer {
+  position: sticky !important;
+  bottom: 0 !important;
+  background: var(--bgColor-default, white) !important;
+  z-index: 10 !important;
+  padding: 1rem !important;
+}

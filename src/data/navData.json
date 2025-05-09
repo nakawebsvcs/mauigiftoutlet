@@ -1,0 +1,22 @@
+[
+  {
+    "key": "Home",
+    "url": "/"
+  },
+  {
+    "key": "Products",
+    "url": "/products/"
+  },
+  {
+    "key": "About Us",
+    "url": "/about/"
+  },
+  {
+    "key": "Reviews",
+    "url": "/reviews/"
+  },
+  {
+    "key": "Contact",
+    "url": "/contact/"
+  }
+]
