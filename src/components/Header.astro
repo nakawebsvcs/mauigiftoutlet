@@ -528,4 +528,54 @@ import SignIn from "./Snipcart/SignIn.astro";
 			}
 		}
 	}
+
+	/* Large Desktop - 1920px */
+    @media only screen and (min-width: 120rem) {
+        #cs-navigation {
+            .cs-container {
+                max-width: 90%; /* Increase the max-width for large screens */
+                padding: 0 2rem; /* Add some padding on the sides */
+            }
+            
+            .cs-ul {
+                /* Increase spacing between navigation items */
+                gap: clamp(2.5rem, 3vw, 3.5rem);
+            }
+            
+            .cs-li-link {
+                /* Slightly increase font size for better readability */
+                font-size: clamp(1rem, 1.3vw, 1.2rem);
+            }
+            
+            .branding-wrapper {
+                /* Give more space to the branding section */
+                gap: 1.5rem;
+                
+                .cs-logo {
+                    /* Allow the logo to be slightly larger */
+                    max-width: 380px;
+                }
+                
+                .title-container {
+                    margin-left: 1rem;
+                    
+                    .site-title {
+                        /* Ensure the title has enough room */
+                        margin-top: 1rem;
+                        font-size: 3.5rem;
+                    }
+                    
+                    .wave-decoration {
+                        width: 230px;
+                        margin-top: -0.25rem;
+                    }
+                }
+            }
+            
+            /* Add more space for the cart and sign-in buttons */
+            .cs-hidden.lg\:cs-flex {
+                gap: 2rem;
+            }
+        }
+    }
 </style>

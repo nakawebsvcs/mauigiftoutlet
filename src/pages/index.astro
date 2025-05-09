@@ -221,8 +221,24 @@ const products = await getCollection("products");
     position: relative;
     display: block;
     width: calc(108% + 1.3px);
-    height: 209px;
+    height: auto; /* Change from fixed height to auto */
+    min-height: 70px; /* Add minimum height */
+    /* Adjust height responsively based on viewport width */
+    height: clamp(70px, 15vw, 209px);
     transform: rotateY(180deg);
+}
+
+/* Add specific adjustments for mobile */
+@media only screen and (max-width: 600px) {
+    .custom-shape-divider-bottom-1746819066 svg {
+        /* Increase width to prevent horizontal squishing */
+        width: calc(130% + 1.3px);
+        /* Center the wider SVG */
+        position: relative;
+        left: -15%;
+        /* Reduce the height slightly on very small screens */
+        height: clamp(50px, 12vw, 70px);
+    }
 }
 
 .custom-shape-divider-bottom-1746819066 .shape-fill {

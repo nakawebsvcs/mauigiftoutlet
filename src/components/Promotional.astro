@@ -1,5 +1,8 @@
 <!-- ============================================ --><!--                 Promotions                   --><!-- ============================================ -->
 <section id="hero-1590">
+	<div class="wave-divider">
+		<img src="/assets/svgs/wave.svg" alt="decorative wave divider" width="100%" height="auto" aria-hidden="true">
+	</div>
 	<div class="cs-container">
 		<ul class="cs-card-group">
 			<li class="cs-item cs-item1">
@@ -64,8 +67,28 @@
 			padding-block: clamp(6.375rem, 20.95vw, 10.625rem);
 			position: relative;
 			z-index: 1;
-			overflow: hidden;
+			overflow: visible; /* Change from hidden to visible */
+    		margin-top: 50px; /* Add margin to make room for the wave */
 
+			
+			.wave-divider {
+                width: 115vw; /* Full viewport width */
+                position: absolute;
+               /* Use a responsive value for top positioning */
+                top: clamp(-11rem, -14vw, -18rem); /* Smaller value on mobile, larger on desktop */
+                left: 50%; /* Center it */
+                transform: translateX(-50%); /* Center it */
+                z-index: 1;
+                line-height: 0;
+                
+                img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+            }
+			
+			
 			.cs-container {
 				width: 100%;
 				/* changes to 1720px at desktop */
@@ -306,6 +329,11 @@
 				max-width: (1720/16rem);
 			}
 
+			 .wave-divider {
+                /* Adjust position for tablet */
+                top: clamp(-18rem, 25vw, -30rem);
+            }
+
 			.cs-image-group {
 				font-size: inherit;
 			}
@@ -320,4 +348,25 @@
 			}
 		}
 	}
+
+	 /* Desktop - 1024px and above */
+    @media only screen and (min-width: 64rem) {
+        #hero-1590 {
+            .wave-divider {
+                /* Adjust position for desktop */
+                top: clamp(-24rem, -40vw, -50rem);
+            }
+		}
+	}
+
+	/* Large Desktop - 1920px and above */
+    @media only screen and (min-width: 120rem) {
+        #hero-1590 {
+            .wave-divider {
+                /* Adjust position for large desktop */
+                top: clamp(-30rem, -44vw, -55rem);
+                width: 115vw; /* Slightly reduce width for better proportions */
+            }
+        }
+    }
 </style>
