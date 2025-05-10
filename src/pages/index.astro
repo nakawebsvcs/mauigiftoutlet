@@ -29,7 +29,7 @@ const products = await getCollection("products");
                 Step into the heart of Maui and discover a charming island gift shop filled with aloha. Whether you're searching for the perfect souvenir to remember your trip, a unique gift for someone special, or just something to treat yourself, we’ve got you covered.
             </p>
             <div class="cs-button-group">
-                <a href="" class="cs-button-solid cs-button1">Shop Now</a>
+                <a href="" id="hero-shop-button" class="cs-button-solid cs-button1" style="position: relative; z-index: 9999 !important; pointer-events: auto !important;">Shop Now</a>
             </div>
         </div>
     </div>
@@ -48,6 +48,9 @@ const products = await getCollection("products");
         <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
     </svg>
 </div>
+<div class="wave-divider">
+		<img src="/assets/svgs/wave.svg" alt="decorative wave divider" width="100%" height="auto" aria-hidden="true">
+	</div>
 </section>
 
 
@@ -154,163 +157,77 @@ const products = await getCollection("products");
 <style lang="less">
   /* STYLES FOR ABOVE THE FOLD */
 
-  /*-- -------------------------- -->
-<---           Hero             -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    #hero-1785 {
-        /* 200px - 300px - leaving extra space for the navigation */
-        padding: clamp(12.5rem, 25.95vw, 18.75em) (16/16rem);
-        /* prevents the topper line from causing an overflow */
-        overflow: hidden;
-        position: relative;
-        z-index: 1;
-
-        .cs-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: (48/16rem);
-        }
-
-        .cs-content {
-            text-align: center;
-            width: 100%;
-            max-width: (750/16rem);
-        }
-
-        .cs-title {
-            /* 49px - 84px */
-            font-size: clamp(4rem, 8vw, 6.5rem);
-        }
-
-        .cs-title,
-        .cs-text {
-            color: var(--bodyTextColorWhite);
-        }
-
-        .cs-text {
-          font-size: clamp(1rem, 1.5vw, 2rem);
-            margin-bottom: (32/16rem);
-        }
-
-        .cs-button-group {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: (8/16rem);
-        }
-
-       .custom-shape-divider-bottom-1746819066 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1746819066 svg {
-    position: relative;
-    display: block;
-    width: calc(108% + 1.3px);
-    height: auto; /* Change from fixed height to auto */
-    min-height: 70px; /* Add minimum height */
-    /* Adjust height responsively based on viewport width */
-    height: clamp(70px, 15vw, 209px);
-    transform: rotateY(180deg);
-}
-
-/* Add specific adjustments for mobile */
-@media only screen and (max-width: 600px) {
-    .custom-shape-divider-bottom-1746819066 svg {
-        /* Increase width to prevent horizontal squishing */
-        width: calc(130% + 1.3px);
-        /* Center the wider SVG */
-        position: relative;
-        left: -15%;
-        /* Reduce the height slightly on very small screens */
-        height: clamp(50px, 12vw, 70px);
-    }
-}
-
-.custom-shape-divider-bottom-1746819066 .shape-fill {
-    fill: #ffffff;
-}
-
-        .cs-background {
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -2;
-
-            &:before {
-                /* Overlay */
-                content: "";
-                width: 100%;
-                height: 100%;
-                background: #000;
-                /* prevents the cursor from interacting with it */
-                pointer-events: none;
-                opacity: 0.5;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 1;
-            }
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        }
-    }
-}
-
-/* Large Desktop - 1920px */
-@media only screen and (min-width: 120rem) {
-    #hero-1785 {
-        /* this ties the padding bottom value to the size of the screen width. The wider the image gets the taller it gets, meaning it will get clsoer and closer to the content. This makes the padding bottom value grow with the screen size so it accounts for the growing height of the svg graphic getting taller */
-        padding-bottom: 14vw;
-    }
-}
-
-
-  /*-- -------------------------- -->
+ /*-- -------------------------- -->
 <---           Hero             -->
 <--- -------------------------- -*/
 
   /* Mobile - 360px */
-  @media only screen and (min-width: 0em) {
-    #hero {
-      font-family: "Roboto", "Arial", sans-serif;
-      /* Centers button */
-      text-align: center;
-      /* changes on tablet */
-      padding: 0 (16/16rem);
-      padding-bottom: (100/16rem);
+  @media only screen and (min-width: 0rem) {
+    #hero-1785 {
+      /* 200px - 300px - leaving extra space for the navigation */
+      padding: clamp(12.5rem, 25.95vw, 18.75em) (16/16rem);
+      /* Change to visible to allow the wave to extend beyond */
+      overflow: visible;
       position: relative;
       z-index: 1;
-      /* prevents overflow from the lines extending past the screen width */
-      overflow: hidden;
 
-      .cs-picture {
-        /* Background Image */
+      .cs-container {
+        width: 100%;
+        max-width: (1280/16rem);
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: (48/16rem);
+      }
+
+      .cs-content {
+        text-align: center;
+        width: 100%;
+        max-width: (750/16rem);
+        position: relative;
+        z-index: 5;
+      }
+
+      .cs-title {
+        /* 49px - 84px */
+        font-size: clamp(4rem, 8vw, 6.5rem);
+      }
+
+      .cs-title,
+      .cs-text {
+        color: var(--bodyTextColorWhite);
+      }
+
+      .cs-text {
+        font-size: clamp(1rem, 1.5vw, 2rem);
+        margin-bottom: (32/16rem);
+      }
+
+      .cs-button-group {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: (8/16rem);
+        position: relative;
+        z-index: 10;
+      }
+
+      .cs-button-solid {
+        margin-bottom: calc(16 / 16 * 1rem);
+        position: relative;
+        z-index: 5;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        
+        /* Add hover styles */
+        &:hover {
+          background-color: var(--primaryDark);
+          color: #fff;
+        }
+      }
+
+      .cs-background {
         width: 100%;
         height: 100%;
         display: block;
@@ -320,210 +237,124 @@ const products = await getCollection("products");
         z-index: -2;
 
         &:before {
-          /* Black Color Overlay */
+          /* Overlay */
           content: "";
           width: 100%;
           height: 100%;
           background: #000;
-          opacity: 0.7;
+          /* prevents the cursor from interacting with it */
+          pointer-events: none;
+          opacity: 0.5;
           display: block;
           position: absolute;
           top: 0;
           left: 0;
           z-index: 1;
-          /* prevents the cursor from interacting with it */
-          pointer-events: none;
         }
 
         img {
           width: 100%;
           height: 100%;
-          /* Makes image act like a background-image */
           object-fit: cover;
           position: absolute;
           top: 0;
           left: 0;
         }
       }
-
-      .cs-container {
+      
+      /* Custom shape divider styles */
+      .custom-shape-divider-bottom-1746819066 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        max-width: (1280/16em);
-        margin: auto;
-        /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
-        /* 144px - 280px - leaving extra space for the navigation */
-        /* changes on tablet */
-        padding: clamp(9em, 25.95vw, 17.5em) 0;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+        z-index: 2;
+        
+        svg {
+          position: relative;
+          display: block;
+          width: calc(108% + 1.3px);
+          height: auto;
+          min-height: 70px;
+          height: clamp(70px, 15vw, 209px);
+          transform: rotateY(180deg);
+        }
+        
+        .shape-fill {
+          fill: #ffffff;
+        }
+      }
+      
+      /* Wave divider styles - ADJUSTED for end-of-section placement */
+      .wave-divider {
+        width: 115vw; /* Full viewport width */
+        position: absolute;
+        /* Using bottom instead of top positioning */
+        bottom: clamp(-5rem, -10vw, -8rem); /* Adjusted values */
+        left: 50%; /* Center it */
+        transform: translateX(-50%); /* Center it */
+        z-index: 3; /* Higher than the bottom shape divider */
+        line-height: 0;
+        pointer-events: none;
+        
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+    
+    /* Mobile-specific adjustments for the custom shape divider */
+    @media only screen and (max-width: 600px) {
+      #hero-1785 .custom-shape-divider-bottom-1746819066 svg {
+        width: calc(130% + 1.3px);
         position: relative;
-
-        &:before {
-          /* Left Line */
-          content: "";
-          width: 1px;
-          height: 100%;
-          background: -moz-linear-gradient(
-            top,
-            rgba(250, 251, 252, 0.5) 0%,
-            rgba(250, 251, 252, 0) 100%
-          ); /* FF3.6-15 */
-          background: -webkit-linear-gradient(
-            top,
-            rgba(250, 251, 252, 0.5) 0%,
-            rgba(250, 251, 252, 0) 100%
-          ); /* Chrome10-25,Safari5.1-6 */
-          opacity: 1;
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
-
-      .cs-flex-group {
-        width: 80vw;
-        /* 464px - 562px */
-        max-width: clamp(29em, 60vw, 35.125em);
-        margin: auto;
-        /* 60px - 220px */
-        margin-bottom: clamp(3.75em, 15.5vw, 13.75em);
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-wrap: wrap;
-      }
-
-      .cs-topper {
-        text-align: center;
-        color: var(--primary);
-      }
-
-      .cs-title {
-        text-align: center;
-        width: 100%;
-        color: var(--bodyTextColorWhite);
-      }
-
-      .cs-text {
-        text-align: center;
-        /* 32px - 40px */
-        margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
-        /* 40px - 48px */
-        margin-bottom: clamp(2.5rem, 4vw, 3rem);
-        color: var(--bodyTextColorWhite);
-      }
-
-      .cs-button-solid {
-        line-height: clamp(2.875em, 5.5vw, 3.5em);
-        height: initial;
-        margin-bottom: calc(16 / 16 * 1rem);
-      }
-
-      .cs-button-transparent {
-        font-size: (16/16rem);
-        font-weight: 700;
-        /* 46px - 56px */
-        line-height: clamp(2.875em, 5.5vw, 3.5em);
-        text-decoration: none;
-        width: (180/16rem);
-        /* 46px - 56px */
-        height: clamp(2.875em, 5.5vw, 3.5em);
-        margin: 0 (8/16rem);
-        box-sizing: border-box;
-        padding: 0;
-        color: #fff;
-        background-color: transparent;
-        border: 1px solid var(--bodyTextColorWhite);
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        z-index: 1;
-
-        &:before {
-          content: "";
-          background: #000;
-          opacity: 1;
-          display: block;
-          position: absolute;
-          /* so it sits on top of the border */
-          top: -1px;
-          right: -1px;
-          bottom: -1px;
-          left: -1px;
-          z-index: -1;
-          /* this is what creates the grow affect on hover */
-          transform: scaleX(0);
-          transition: transform 0.3s;
-          transform-origin: left;
-        }
-
-        &:hover {
-          &:before {
-            transform: scaleX(1);
-          }
-        }
-
-        .cs-img {
-          margin-right: (12/16rem);
-          display: block;
-        }
+        left: -15%;
+        height: clamp(50px, 12vw, 70px);
       }
     }
   }
 
   /* Tablet - 768px */
-  @media only screen and (min-width: 48em) {
-    #hero {
-      /* 32px - 40px */
-      padding: 0 clamp(2em, 5vw, 2.5em);
-
+  @media only screen and (min-width: 48rem) {
+    #hero-1785 {
       .cs-container {
-        padding: clamp(7em, 27.95vw, 17.5em) 0 clamp(9em, 30.95vw, 23.5em) 0;
-        &:after {
-          /* Right Line */
-          content: "";
-          width: 1px;
-          height: 100%;
-          background: -moz-linear-gradient(
-            top,
-            rgba(250, 251, 252, 0) 0%,
-            rgba(250, 251, 252, 0.5) 100%
-          ); /* FF3.6-15 */
-          background: -webkit-linear-gradient(
-            top,
-            rgba(250, 251, 252, 0) 0%,
-            rgba(250, 251, 252, 0.5) 100%
-          ); /* Chrome10-25,Safari5.1-6 */
-          opacity: 1;
-          display: block;
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
+        max-width: (1720/16rem);
       }
 
-      .cs-button-solid {
-        margin-right: (20/16rem);
-        margin-bottom: 0;
+      .wave-divider {
+        /* Adjusted for tablet */
+        bottom: clamp(-8rem, -15vw, -12rem);
       }
     }
   }
 
-
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #hero {
-        .cs-background {
-          &:before {
-            opacity: 0.8;
-          }
-        }
+  /* Desktop - 1024px and above */
+  @media only screen and (min-width: 64rem) {
+    #hero-1785 {
+      .wave-divider {
+        /* Adjusted for desktop */
+        bottom: clamp(-12rem, -20vw, -18rem);
       }
     }
   }
 
+  /* Large Desktop - 1920px and above */
+  @media only screen and (min-width: 120rem) {
+    #hero-1785 {
+      /* Adjust padding */
+      padding-bottom: 14vw;
+      
+      .wave-divider {
+        /* Adjusted for large desktop */
+        bottom: clamp(-18rem, -25vw, -24rem);
+      }
+    }
+  }
 
   /*-- -------------------------- -->
 <---          Reviews           -->
@@ -647,25 +478,4 @@ const products = await getCollection("products");
     }
   }
 
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #reviews {
-        .cs-title,
-        .cs-text,
-        .cs-item-p,
-        .cs-reviewer {
-          color: var(--bodyTextColorWhite);
-        }
-
-        .cs-item {
-          background: var(--medium);
-        }
-
-        .cs-desc {
-          color: var(--primaryLight);
-        }
-      }
-    }
-  }
 </style>

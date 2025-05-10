@@ -56,51 +56,54 @@
 	}
 
 	// Button - can be replaced using CodeStitch's "Button" Stitches
-	.cs-button-solid {
-		font-family: inherit;
-		font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
-		font-weight: bold;
-		text-align: center;
-		text-transform: uppercase;
-		text-decoration: none;
-		width: auto;
-		// height: (24/16rem);
-		padding: (8/16rem);
-		color: #000;
-		background-color: var(--primary);
-		border: none;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.5rem;
-		position: relative;
-		z-index: 1;
-		transition: color 0.3s;
-		transition-delay: 0.1s;
-
-		&:hover {
-			color: #fff;
-			&:before {
-				width: 100%;
-			}
-		}
-
-		&:before {
-			content: "";
-
-			//Transition properties
-			width: 0;
-			height: 100%;
-			background-color: var(--secondary);
-			opacity: 1;
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: -1;
-			transition: width 0.3s;
-		}
-	}
+.cs-button-solid {
+    font-family: inherit;
+    font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: auto;
+    padding: (8/16rem);
+    color: #000;
+    background-color: var(--primary);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+    
+    /* Improved transition properties */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    
+    &:hover {
+        background-color: var(--primaryDark);
+        color: #fff;
+        
+        /* Add this to animate the pseudo-element on hover */
+        &:before {
+            width: 100%;
+        }
+    }
+    
+    &:before {
+        content: "";
+        width: 0;
+        height: 100%;
+        background-color: var(--secondary);
+        opacity: 1;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        
+        /* Improved transition for the pseudo-element */
+        transition: width 0.3s ease;
+    }
+}
 }
 
 @media only screen and (min-width: 64em) {

@@ -32,7 +32,7 @@ const priceInCart = discountedPrice ? discountedPrice : price;
 					<!-- if there's no discount, use this: <Price currency={currency} price={ price } /> -->
 					<Price currency={currency} price={price} discountedPrice={discountedPrice} />
 				</div>
-				<!-- Buy buton -->
+				<!-- Buy button -->
 				<Product as="span" id={product.id} name={name} url=`/products/${product.id}` price={priceInCart} description={description} image={image.src}>
 					<button class="cs-buy" aria-label={`Add ${name} to cart`}>
 						<Icon name="mdi--basket-plus" class="cs-basket" aria-hidden="true" />
